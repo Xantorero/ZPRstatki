@@ -1,7 +1,7 @@
 #ifndef SHIP_H
 #define  SHIP_H
 #include <vector>
-#include <boost/asio/detail/buffer_sequence_adapter.hpp>
+
 
 class Ship
 {

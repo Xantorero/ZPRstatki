@@ -29,8 +29,6 @@ int main()
 		return 0;
 	}
 
-
-
 	void Gameloop::shoot(Map& map)
 	{
 		char guessX;
@@ -64,17 +62,10 @@ int main()
 			Ship* four = new Ship(4);
 			map.addShip(*four);
 			map.changeMap(*four);
-		//	std::cout << "Trzymasztowiec";
-			//std::cout << "Dwumasztowiec";
-			//std::cout << "Jednoomasztowiec";
+		
 	
 	}
 
-
-	int dodaj(int i, int j)
-	{
-		return i + j;
-	}
 
 
 	
