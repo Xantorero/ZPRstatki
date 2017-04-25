@@ -21,7 +21,7 @@ void Map::createMap()
 
 }
 
-void Map::displayMap()
+int Map::displayMap()
 {
 	int counter = 0;
 	for (Point* point : map)
@@ -31,21 +31,25 @@ void Map::displayMap()
 		{
 			cout << "X ";
 			++counter;
+			delete point;
 		}
 		if (point->stateField == ship)
 		{
 			cout << "O ";
 			++counter;
+			delete point;
 		}
 		if (point->stateField == hit)
 		{
 			cout << "T ";
 			++counter;
+			delete point;
 		}
 		if (point->stateField == miss)
 		{
 			cout << "P ";
 			++counter;
+			delete point;
 		}
 		if(counter == 10)
 		{
@@ -53,7 +57,7 @@ void Map::displayMap()
 			counter = 0;
 		}
 	}
-
+	return counter;
 }
 
 

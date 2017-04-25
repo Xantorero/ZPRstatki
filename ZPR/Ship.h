@@ -2,11 +2,11 @@
 #define  SHIP_H
 #include <vector>
 
-
 class Ship
 {
 public:
 	Ship(int lenght);
+	Ship();
 
 	enum state
 	{

@@ -7,8 +7,8 @@ class Gameloop
 private:
 	
 public:
-	bool isRunning;
-	bool isPlayerTurn;
+	bool isRunning = true;
+	bool isPlayerTurn = true;
 	void placeShip(Map& map);
 	void shoot(Map& map);
 

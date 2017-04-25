@@ -25,6 +25,11 @@ public:
 				this->y = y;
 				this->stateField = unknown;
 			}
+			~Point()
+			{
+				
+				//delete Point;
+			}
 			char x;
 			int y;
 			state stateField;
@@ -41,7 +46,7 @@ public:
 		};
 
 		void createMap();
-		void displayMap();
+		int displayMap();
 		void changeMap(Ship& ship);
 		void changeHit(char x, int y);
 		void changeMiss(char x, int y);

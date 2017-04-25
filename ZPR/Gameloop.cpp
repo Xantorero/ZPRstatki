@@ -1,33 +1,40 @@
-
+#define BOOST_TEST_DYN_LINK
+#define BOOST_TEST_MODULE Hello
 
 #include "Gameloop.h"
 #include "Ship.h"
 #include <iostream>
-#include <boost/test/unit_test.hpp>
 #include "Map.h"
+#include <boost/test/included/unit_test.hpp>
 
-int dodaj(int i, int j);
 
-int main()
-	{
-		Gameloop gameloop;
-		Map mapa;
-		mapa.displayMap();
-		gameloop.isRunning = true;
-		gameloop.isPlayerTurn = true;
-		gameloop.placeShip(mapa);
-		mapa.displayMap();
-		
-		while(gameloop.isRunning)
-		{
-			gameloop.shoot(mapa);
-			mapa.displayMap();
-			gameloop.isRunning = false;
-		}
-	
-	
-		return 0;
-	}
+int dodaj(int i, int j)
+{
+	return i + j;
+}
+
+
+BOOST_AUTO_TEST_CASE(testGameloop)
+{
+	Gameloop gameloop;
+	BOOST_CHECK(gameloop.isRunning == true);
+}
+
+BOOST_AUTO_TEST_CASE(testShip)
+{
+	Ship ship(4);
+	BOOST_CHECK(ship.getLenght() == 4);
+}
+
+BOOST_AUTO_TEST_CASE(testMap){
+	Map mapa;
+	BOOST_CHECK(mapa.displayMap() == 0);
+}
+
+
+
+
+
 
 	void Gameloop::shoot(Map& map)
 	{
@@ -62,9 +69,10 @@ int main()
 			Ship* four = new Ship(4);
 			map.addShip(*four);
 			map.changeMap(*four);
-		
+
 	
 	}
+
 
 
 
